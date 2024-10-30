@@ -77,7 +77,7 @@ void printMenu() {
     cout << "\n\nWelcome to TechTarget!" << endl;
     cout << "\nHow can we help you today?" << endl;
     cout << "\n1.) Display cart." << endl;
-    cout << "2.) Add item to cart." << endl;
-    cout << "3.) Remove item from cart." << endl;
-    cout << "4.) Checkout and exit." << endl;
+    cout << "\n2.) Add item to cart." << endl;
+    cout << "\n3.) Remove item from cart." << endl;
+    cout << "\n4.) Checkout and exit." << endl;
 }
