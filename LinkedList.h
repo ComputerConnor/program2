@@ -56,11 +56,42 @@ class ListNode
         ListNode *previous;
     
     public:
-        ListNode (Cart nodeItem)
+        ListNode getItem () const
+        {
+            return this->itemInfo;
+        }
+
+        ListNode getNext () const
+        {
+            return this->next;
+        }
+
+        ListNode getPrevious () const
+        {
+            return this->previous;
+        }
+
+        ListNode setData (Cart nodeItem)
         {
             itemInfo = nodeItem;
             next = NULL;
             previous = NULL;
+        }
+
+        void nextNode (ListNode* head, ListNode* tail)
+        {
+            if (head != NULL)
+            {
+                cout << head->data << endl;
+
+                nextNode (head->next);
+            }
+
+            else 
+            {
+                cout << "At the beginning of the cart\n";
+                next->data = tail->data;
+            }
         }
 
 };
