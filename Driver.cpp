@@ -31,12 +31,14 @@ int main() {
                 string category;
 
                 // Get item details from the user
+                cin.ignore();
                 cout << "\nEnter item name: ";
-                cin >> name;
+                getline (cin, name);
                 cout << "\nEnter item price: ";
                 cin >> price;
+                cin.ignore();
                 cout << "\nEnter item category: ";
-                cin >> category;
+                getline (cin, category);
 
                 // Create a new DataClass item and add it to the grocery list
                 DataClass item;
