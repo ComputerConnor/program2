@@ -16,3 +16,55 @@ LinkedList.h:
   While this seemed to work, there was a quirk that it would not sort if only called once. 
   In this state of only being called one, it would cause items to be deleted if new ones were added, seemingly locking the number of items allowed in the list. 
   To fix this, the function was called twice, allowing it to not lock up in the amount of items that were in the list, and making the list in descending order.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Driver.cpp:
+Case 1: Add Item to List
+  When case 1 is called, the code prompts the user to enter the details of the item they wish to add to the list. 
+  This includes the item name, price, and category. The code validates the input to ensure that the price is a positive value. 
+  If the input is valid, it creates a new DataClass object with the provided information and appends it to the linked list using the append function. 
+  After adding the item, it confirms the successful addition and loops back to the main menu.
+
+Case 2: Remove Item from List
+  When case 2 is called, the code checks if the list has any items in it using the size function. 
+  If the list is empty, it notifies the user and returns to the main menu. 
+  If there are items, it prompts the user to enter the index of the item they wish to remove. 
+  The code validates the input to ensure that it is a valid index within the bounds of the list. 
+  If the index is valid, it calls the removeAt function to remove the specified item. Upon successful removal, it confirms the action and loops back to the menu.
+
+Case 3: Display Items in List
+  When case 3 is called, the code first checks if the list has any items using the size function. 
+  If the list is empty, it informs the user and returns to the main menu. 
+  If there are items, it calls the overloaded output operator for the LinkedList class to display all the items currently in the list. 
+  The formatted output includes each item's details, and then the code loops back to the menu.
+
+Case 4: Sort Items in List
+  When case 4 is called, the code will first check to see if the list has any items in it using the size function. 
+  If there is nothing in the list, it will not sort the list. 
+  If there are items in the list, it will then move on to ask if you would want the items sorted in ascending price order or descending price order. 
+  You will put in an input of 1 or 2, any other number will loop back and ask again. 
+  Upon making your decision, it will then call the quick sort function to automatically sort the list in ascending order, even if you picked descending. 
+  Once the list is sorted, it checks to see if you selected 2 for descending. 
+  If you did, it will then put the list in the reverse function, reversing all the items in the list in descending price order.
+  Once sorted, it will print the list using the overloaded operator and loop back to the menu.
+
+Case 5: Clear List
+  When case 5 is called, the code will check if the list is empty using the size function. 
+  If the list is empty, it will notify the user that there are no items to clear. 
+  If there are items in the list, it will proceed to clear all items by repeatedly calling removeAt(0) until the list is empty. 
+  After clearing the list, it will inform the user that the list has been successfully cleared and loop back to the main menu.
+
+Case 6: Exit Program
+  When case 6 is called, the code will print a message thanking the user for using the program.
+  It will then terminate the program gracefully, ensuring any necessary cleanup or deallocation of resources is performed before exiting.
+
+PrintMenu():
+    Prints the options for the cases
+
+PrintStartupArt():
+    Prints ascii art from one of four options, what art is decided is randomly selected from numbers one through four.
+    Whichever number it lands on, correlates with the art shown.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
