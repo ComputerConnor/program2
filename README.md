@@ -1,4 +1,4 @@
-<h1>**TechTarget**</h1>
+<h1>TechTarget</h1>
 <br>Inventory Management Program
 
 Overview:
