@@ -34,6 +34,45 @@ public:
     string getDetails() const {
         return "Item: " + itemName + ", Price: $" + to_string(price) + ", Category: " + category;
     }
+
+    bool operator == (const DataClass& d)
+    {
+        if (price < d.price)
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
+    }
+
+    bool operator > (const DataClass& d)
+    {
+        if (price > d.price)
+        {
+            return true;
+        }
+
+        else 
+        {
+            return false;
+        }
+    }
+
+    bool operator < (const DataClass& d)
+    {
+        if (price < d.price)
+        {
+            return true;
+        }
+
+        else 
+        {
+            return false;
+        }
+    }
 };
 
 #endif

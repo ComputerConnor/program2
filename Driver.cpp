@@ -13,7 +13,7 @@ int main() {
         printMenu();
         cin >> userInput;
 
-        if (userInput < 1 || userInput > 4) {
+        if (userInput < 1 || userInput > 5) {
             cout << "\n\nPlease choose a number 1-4." << endl;
         }
 
@@ -22,7 +22,7 @@ int main() {
                 if (groceryList.size() == 0) {  // Check if the list is empty
                     cout << "\nYour cart is empty." << endl;  // Print message if empty
                 } else {
-                    groceryList.displayItems();  // Call the method to display items
+                    cout << groceryList;  // Call the method to display items
                 }
                 break;
             case 2: {  // Add item to cart
@@ -51,7 +51,7 @@ int main() {
                 if (groceryList.size() == 0) {  // Check if the list is empty
                     cout << "Your cart is empty. Nothing to remove." << endl;  // Print message if empty
                 } else {
-                    groceryList.displayItems();  // Show current items in cart
+                    cout << groceryList;  // Show current items in cart
                     
                     int itemToRemove;
                     cout << "\nEnter the number of the item to remove: ";
@@ -66,11 +66,53 @@ int main() {
                 }
                 break;
             }
-            case 4:  // Checkout and exit
+            case 4:
+            {
+                int sortC;
+                bool ascending;
+
+                if (groceryList.size() == 0) 
+                { 
+                    cout << "\nYour cart is empty." << endl;
+                }
+                else
+                {
+                    cout << "\nWould you like to sort the cart in ascending or descending price order?";
+                    cout << "\n1.) Ascending order.";
+                    cout << "\n2.) Descneding order.\n\n";
+
+                    cin >> sortC;
+
+                    while (sortC != 1 && sortC != 2)
+                    {
+                        cout << "\nPlease enter 1 or 2.\n\n";
+                        cin >> sortC;
+                    }
+
+                    if (sortC == 1)
+                    {
+                        ascending = true;
+                    }
+
+                    else
+                    {
+                        ascending = false;
+                    }
+
+                    cout << ascending << "this is the value\n";
+                    groceryList.sort(ascending);
+
+                    cout << "Your cart has been sorted.\n";
+
+                    cout << groceryList;
+                }
+                break;
+            }
+            case 5:  // Checkout and exit
                 cout << "Thank you for using TechTarget!" << endl;
                 break;
         }
-    } while (userInput != 4);
+    } while (userInput != 5);
 
     return 0;
 }
@@ -81,5 +123,6 @@ void printMenu() {
     cout << "\n1.) Display cart." << endl;
     cout << "\n2.) Add item to cart." << endl;
     cout << "\n3.) Remove item from cart." << endl;
-    cout << "\n4.) Checkout and exit." << endl;
+    cout << "\n4.) Sort the items in cart." << endl;
+    cout << "\n5.) Checkout and exit." << endl;
 }
