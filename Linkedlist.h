@@ -58,8 +58,7 @@ public:
 
         ListNode<T>* current = head;
 
-        // Traverse to the node at the specified index
-        for (int i = 1; i < index; ++i) {
+        for (int i = 1; i < index; i++) {
             current = current->next;
         }
 
