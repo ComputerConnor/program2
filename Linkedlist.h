@@ -10,7 +10,7 @@ template <typename T>
 class ListNode;
 
 template <typename T>
-class ListNode {
+class ListNode{
 public:
     T data;
     ListNode* next;
@@ -19,7 +19,7 @@ public:
 };
 
 template <typename T>
-class LinkedList {
+class LinkedList{
 private:
     ListNode<T>* head;
     ListNode<T>* tail;
@@ -28,7 +28,7 @@ private:
 public:
     LinkedList() : head(nullptr), tail(nullptr), listSize(0) {}
 
-    void append(const T& item) {
+    void append(const T& item){
         ListNode<T>* newNode = new ListNode<T>(item);
         if (!head) {
             head = tail = newNode;
@@ -40,7 +40,7 @@ public:
         listSize++;
     }
 
-    void popFront() {
+    void popFront(){
         if (head) {
             ListNode<T>* temp = head;
             head = head->next;
@@ -50,7 +50,7 @@ public:
         }
     }
 
-    void removeAt(int index) {
+    void removeAt(int index){
         if (index < 1 || index > listSize) {
             cout << "Index out of bounds." << endl;
             return;
@@ -58,19 +58,19 @@ public:
 
         ListNode<T>* current = head;
 
-        for (int i = 1; i < index; i++) {
+        for (int i = 1; i < index; i++){
             current = current->next;
         }
 
-        if (current->previous) {
+        if (current->previous){
             current->previous->next = current->next;
-        } else {
+        }else{
             head = current->next;
         }
 
-        if (current->next) {
+        if (current->next){
             current->next->previous = current->previous;
-        } else {
+        }else{
             tail = current->previous;
         }
 
