@@ -1,17 +1,18 @@
-In the LinkedList.h file, the sorting algorithm was implemented using a quick sort algorithm. 
-Four functions were implemented to achieve this sort of goal. 
-These functions were the partition function, sortHelper function, the reverseList function, and the sort function. 
-This sorting algorithm would be easy to implement but it then showed how hard it would be after starting it. 
-At first, we had difficulty knowing when to point to the head or tail of the list and how to make a swap between two items on the list. 
-After some research, a piece of example code was found on Geeks for Geeks where they used a sorting helper function. 
-This would allow the use of the head and tail pointers of the list without having to call them in the sorting function. 
-Once the syntax used the proper pointers to what was figured out, there were then issues of not having proper operators. 
-It was quickly discovered that the operator outputs were not implemented yet, which fixed many of the issues. 
-Once the quick sort was finished, the list could finally be sorted in ascending order. 
-However, it still needs to be able to sort it in descending order. 
-At first, it was going to be implemented similarly to how the ascending sort was made, using a quick sort algorithm. 
-After an hour and a half and trying to get it to work, it was decided to use a list reverser to create the descending-ordered list. 
-This was much easier, as it was made into its function and would swap every item around until the list was reversed. 
-While this seemed to work, there was a quirk that it would not sort if only called once. 
-In this state of only being called one, it would cause items to be deleted if new ones were added, seemingly locking the number of items allowed in the list. 
-To fix this, the function was called twice, allowing it to not lock up in the amount of items that were in the list, and making the list in descending order.
+LinkedList.h:
+  In the LinkedList.h file, the sorting algorithm was implemented using a quick sort algorithm. 
+  Four functions were implemented to achieve this sort of goal. 
+  These functions were the partition function, sortHelper function, the reverseList function, and the sort function. 
+  This sorting algorithm would be easy to implement but it then showed how hard it would be after starting it. 
+  At first, we had difficulty knowing when to point to the head or tail of the list and how to make a swap between two items on the list. 
+  After some research, a piece of example code was found on Geeks for Geeks where they used a sorting helper function. 
+  This would allow the use of the head and tail pointers of the list without having to call them in the sorting function. 
+  Once the syntax used the proper pointers to what was figured out, there were then issues of not having proper operators. 
+  It was quickly discovered that the operator outputs were not implemented yet, which fixed many of the issues. 
+  Once the quick sort was finished, the list could finally be sorted in ascending order. 
+  However, it still needs to be able to sort it in descending order. 
+  At first, it was going to be implemented similarly to how the ascending sort was made, using a quick sort algorithm. 
+  After an hour and a half and trying to get it to work, it was decided to use a list reverser to create the descending-ordered list. 
+  This was much easier, as it was made into its function and would swap every item around until the list was reversed. 
+  While this seemed to work, there was a quirk that it would not sort if only called once. 
+  In this state of only being called one, it would cause items to be deleted if new ones were added, seemingly locking the number of items allowed in the list. 
+  To fix this, the function was called twice, allowing it to not lock up in the amount of items that were in the list, and making the list in descending order.
