@@ -3,6 +3,8 @@
 
 #include <string>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -30,7 +32,6 @@ public:
         cout << "Item: " << itemName << ", Price: $" << price << ", Category: " << category << endl;
     }
 
-    // Get details as a formatted string
     string getDetails() const {
         return "Item: " + itemName + ", Price: $" + to_string(price) + ", Category: " + category;
     }

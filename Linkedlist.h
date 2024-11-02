@@ -64,15 +64,15 @@ public:
         }
 
         if (current->previous) {
-            current->previous->next = current->next;  // Link previous node to next node
+            current->previous->next = current->next;
         } else {
-            head = current->next;  // If it's the head, update head
+            head = current->next;
         }
 
         if (current->next) {
-            current->next->previous = current->previous;  // Link next node to previous node
+            current->next->previous = current->previous;
         } else {
-            tail = current->previous;  // If it's the tail, update tail
+            tail = current->previous;
         }
 
         delete current;
@@ -93,7 +93,7 @@ public:
 
     // Returns the current size of the linked list
     int size() const {
-        return listSize; // Return the renamed variable
+        return listSize;
     }
 
 

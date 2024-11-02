@@ -1,15 +1,17 @@
-#include <iostream>
 #include "LinkedList.h"
 #include "DataClass.h"
 #include "SmartPointer.h"
 
 void printMenu();
+void printStartupArt();
+int numGen(int max, int min);
 
-int main() {
+int main(){
     LinkedList<DataClass> groceryList;
     int userInput;
 
     do {
+        printStartupArt();
         printMenu();
         cin >> userInput;
 
@@ -20,17 +22,16 @@ int main() {
         switch (userInput) {
             case 1:  // Display cart
                 if (groceryList.size() == 0) {  // Check if the list is empty
-                    cout << "\nYour cart is empty." << endl;  // Print message if empty
+                    cout << "\nYour cart is empty." << endl;
                 } else {
                     cout << groceryList;  // Call the method to display items
                 }
                 break;
-            case 2: {  // Add item to cart
+            case 2:{  // Add item to cart
                 string name;
                 double price;
                 string category;
 
-                // Get item details from the user
                 cin.ignore();
                 cout << "\nEnter item name: ";
                 getline (cin, name);
@@ -47,7 +48,7 @@ int main() {
                 cout << name << " has been added to your cart." << endl;
                 break;
             }
-            case 3: {  // Remove item from cart
+            case 3:{ // Remove item from cart
                 if (groceryList.size() == 0) {  // Check if the list is empty
                     cout << "Your cart is empty. Nothing to remove." << endl;  // Print message if empty
                 } else {
@@ -79,7 +80,7 @@ int main() {
                 {
                     cout << "\nWould you like to sort the cart in ascending or descending price order?";
                     cout << "\n1.) Ascending order.";
-                    cout << "\n2.) Descneding order.\n\n";
+                    cout << "\n2.) Descending order.\n\n";
 
                     cin >> sortC;
 
@@ -123,5 +124,69 @@ void printMenu() {
     cout << "\n2.) Add item to cart." << endl;
     cout << "\n3.) Remove item from cart." << endl;
     cout << "\n4.) Sort the items in cart." << endl;
-    cout << "\n5.) Checkout and exit." << endl;
+    cout << "\n5.) Checkout and exit.\n" << endl;
+}
+
+void printStartupArt(){
+    int max = 4;
+    int min = 1;
+    int randNum = numGen(max, min);
+
+    if(randNum == 1){
+        cout << "                             _        ," << endl;
+        cout << "                            (_\\______/________ " << endl;
+        cout << "                               \\-|-|/|-|-|-|-|/ " << endl;
+        cout << "                                \\==/-|-|-|-|-/ " << endl;
+        cout << "                                 \\/|-|-|-|,-' " << endl;
+        cout << "                                  \\--|-''' " << endl;
+        cout << "                                   \\_j________ " << endl;
+        cout << "                                   (_)     (_) " << endl;
+    }
+    else if(randNum == 2){
+        cout << "                ______________ " << endl;
+        cout << "    __,.,---'''''              '''''---..._ " << endl;
+        cout << " ,-'             .....:::''::.:            '`-. " << endl;
+        cout << "'           ...:::.....       ' " << endl;
+        cout << "            ''':::'''''       .               , " << endl;
+        cout << "|'-.._           ''''':::..::':          __,,- " << endl;
+        cout << " '-.._''`---.....______________.....---''__,,- " << endl;
+        cout << "      ''`---.....______________.....---'' " << endl;
+    }
+    else if(randNum == 3){
+        cout << "()   ()      ()    /" << endl;
+        cout << "  ()      ()  ()  / " << endl;
+        cout << "   ______________/___ " << endl;
+        cout << "   \\            /   / " << endl;
+        cout << "    \\^^^^^^^^^^/^^^/ " << endl;
+        cout << "     \\     ___/   / " << endl;
+        cout << "      \\   (   )  / " << endl;
+        cout << "       \\  (___) / " << endl;
+        cout << "        \\ /    / " << endl;
+        cout << "         \\    / " << endl;
+        cout << "          \\  / " << endl;
+        cout << "           \\/ " << endl;
+        cout << "           || " << endl;
+        cout << "           || " << endl;
+        cout << "           || " << endl;
+        cout << "           || " << endl;
+        cout << "           || " << endl;
+        cout << "           /\\ " << endl;
+        cout << "          /;;\\ " << endl;
+        cout << "     ============== " << endl;
+    }
+    else{
+        cout << "      _____________,-.___     _ " << endl;
+        cout << "     |____        { {]_]_]   [_] " << endl;
+        cout << "     |___ `-----.__\\ \\_]_]_    . ` " << endl;
+        cout << "     |   `-----.____} }]_]_]_   , " << endl;
+        cout << "     |_____________/ {_]_]_]_] , ` " << endl;
+    }
+}
+
+int numGen(int max, int min) {
+    if (max < min) {
+        swap(max, min);
+    }
+    srand(time(0));
+    return rand() % (max - min + 1) + min;
 }
