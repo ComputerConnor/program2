@@ -1,5 +1,5 @@
-TechTarget 
-Inventory Management Program
+**TechTarget**
+/nInventory Management Program
 
 Overview:
 TechTarget is a console-based inventory management program designed for managing a grocery list. 
