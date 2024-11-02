@@ -99,7 +99,6 @@ int main() {
                         ascending = false;
                     }
 
-                    cout << ascending << "this is the value\n";
                     groceryList.sort(ascending);
 
                     cout << "Your cart has been sorted.\n";
